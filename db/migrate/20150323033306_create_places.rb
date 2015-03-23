@@ -9,7 +9,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :phone
       t.boolean :outdoor
       t.string :website
-      t.url :picture
+      t.string :picture
       t.integer :min_age
       t.boolean :verified
       t.float :l_time
