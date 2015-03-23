@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  s_description: MyText
+  l_description: MyText
+  cost: 1.5
+  address: MyString
+  phone: MyString
+  outdoor: false
+  website: MyString
+  picture: 
+  min_age: 1
+  verified: false
+  l_time: 1.5
+  op_hours: MyString
+
+two:
+  title: MyString
+  s_description: MyText
+  l_description: MyText
+  cost: 1.5
+  address: MyString
+  phone: MyString
+  outdoor: false
+  website: MyString
+  picture: 
+  min_age: 1
+  verified: false
+  l_time: 1.5
+  op_hours: MyString
