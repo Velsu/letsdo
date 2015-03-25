@@ -7,12 +7,17 @@
   <% @places.each do |place| %>
   
     <div class="box panel panel-default">
+      <div class="panel-body">
       <%= place.title %><br>
       <%= place.s_description %><br>
+      <h2>
       <%= link_to 'Show', place %>
       <%= link_to 'Edit', edit_place_path(place) %>
       <%= link_to 'Destroy', place, method: :delete,
                                        data: { confirm: 'Are you sure?' } %>
+      </h2>
+
+      </div>
     </div>
   <% end %>
   
