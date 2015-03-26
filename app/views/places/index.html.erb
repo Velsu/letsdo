@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="col-md-6 col-md-offset-3">
+<div class="container">
   <h1>Listing places</h1>
   
   
@@ -8,8 +8,9 @@
   
     <div class="box panel panel-default">
       <div class="panel-body">
-      <%= place.title %><br>
-      <%= place.s_description %><br>
+      <%= link_to (image_tag place.image.url(:medium)), place %>
+      <p><%= place.title %></p>
+      <p><%= place.s_description %></p>
       <h2>
       <%= link_to 'Show', place %>
       <%= link_to 'Edit', edit_place_path(place) %>
