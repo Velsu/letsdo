@@ -1,29 +1,32 @@
+
 <p id="notice"><%= notice %></p>
-<div class="container">
   <h1>Listing places</h1>
   
-  
-  
+  <h2>Filter</h2>
+<div class="button-group">  
+  <button class="button filter" data-filter="all">show all</button>
+  <button class="button filter" data-filter=".outdoor">outdoor</button>
+</div>
+  <br>
+<div id="Container">
   <% @places.each do |place| %>
-  
-    <div class="box panel panel-default">
-      <div class="panel-body">
-      <%= link_to (image_tag place.image.url(:medium)), place %>
-      <p><%= place.title %></p>
-      <p><%= place.s_description %></p>
-      <h2>
-      <%= link_to 'Show', place %>
-      <%= link_to 'Edit', edit_place_path(place) %>
-      <%= link_to 'Destroy', place, method: :delete,
-                                       data: { confirm: 'Are you sure?' } %>
-      </h2>
-
-      </div>
+      <% if place.outdoor == true %>
+    <div class="mix box panels panel-default outdoor">
+      <% else %>
+    <div class="mix box panels panel-default">      
+      <% end %>
+      
+        <%= link_to (image_tag place.image.url(:medium)), place %>
+        <div class="panel-body">
+          <p><%= place.title %></p>
+          <p><%= place.s_description %></p>
+          <h2>
+            <%= link_to 'Show', place %>
+            <%= link_to 'Edit', edit_place_path(place) %>
+            <%= link_to 'Destroy', place, method: :delete,
+                                             data: { confirm: 'Are you sure?' } %>
+          </h2>
+        </div>
     </div>
   <% end %>
-  
-  
-  <br>
-
-
 </div>
