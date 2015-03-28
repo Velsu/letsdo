@@ -1,19 +1,36 @@
 
 <p id="notice"><%= notice %></p>
   <h1>Listing places</h1>
-  
-  <h2>Filter</h2>
-<div class="button-group">  
+
+ 
+<div class="container button-group">
+
+
+<div class="col-xs-3">
   <button class="button filter" data-filter="all">show all</button>
+  <button class="button filter" data-filter=".indoor">indoor</button>
   <button class="button filter" data-filter=".outdoor">outdoor</button>
+
+</div>
+
+<div class="col-xs-3">
+  <button class="button sort" data-sort="myorder:asc">Asc</button>
+  <button class="button sort" data-sort="myorder:desc">Desc</button>
+</div>
+  
+
+  
+
 </div>
   <br>
 <div id="Container">
   <% @places.each do |place| %>
       <% if place.outdoor == true %>
-    <div class="mix box panels panel-default outdoor">
+    <div class="mix box panels panel-default outdoor" data-myorder="<%= place.title %>">
+      <% elsif place.outdoor == false %>
+      <div class="mix box panels panel-default indoor" data-myorder="<%= place.title %>"> 
       <% else %>
-    <div class="mix box panels panel-default">      
+    <div class="mix box panels panel-default" data-myorder="<%= place.title %>">      
       <% end %>
       
         <%= link_to (image_tag place.image.url(:medium)), place %>
@@ -21,10 +38,11 @@
           <p><%= place.title %></p>
           <p><%= place.s_description %></p>
           <h2>
+            <!-- Admin controls 
             <%= link_to 'Show', place %>
             <%= link_to 'Edit', edit_place_path(place) %>
             <%= link_to 'Destroy', place, method: :delete,
-                                             data: { confirm: 'Are you sure?' } %>
+                                             data: { confirm: 'Are you sure?' } %> -->
           </h2>
         </div>
     </div>
