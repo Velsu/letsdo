@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # masonry gem
 
+gem 'font-awesome-sass'
+gem 'highline'
+gem 'flowtype-rails'
+
 gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'simple_form', '~> 3.1.0'

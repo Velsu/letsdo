@@ -15,6 +15,12 @@
       </div>
      
           <ul class="nav navbar-nav navbar-right">
+           
+           <% if user_signed_in? == true %>
+             <% current_user.adult.times do %>
+              <li><i class="fa fa-male fa-3x"></i></li>
+             <% end %>
+            <% end %>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "New",  new_place_path %></li>
             <% if user_signed_in? %>

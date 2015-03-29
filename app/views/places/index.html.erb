@@ -35,16 +35,25 @@
       <% end %>
       
         <%= link_to (image_tag place.image.url(:medium)), place %>
-        <div class="panel-body">
+        <div class="cards">
           <p><%= place.title %></p>
-          <p><%= place.s_description %></p>
-          <h2>
+          <div class="col-md-3"></div>
+          <div class="col-md-6"></div>
+          <div class="col-md-3 cost">
+            <% if user_signed_in? == true %>
+            $<%= place.cost * current_user.adult%> 
+            <% else %>
+            $<%= place.cost %>
+            <% end %>
+          </div>
+          
+          
             <!-- Admin controls 
             <%= link_to 'Show', place %>
             <%= link_to 'Edit', edit_place_path(place) %>
             <%= link_to 'Destroy', place, method: :delete,
                                              data: { confirm: 'Are you sure?' } %> -->
-          </h2>
+          
         </div>
     </div>
   <% end %>

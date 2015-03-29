@@ -63,7 +63,9 @@
   <%= @place.op_hours %>
 </p>
 
+<% if user_signed_in? && current_user.email == "acevedo.oliver@gmail.com" %>
 <%= link_to 'Edit', edit_place_path(@place) %> |
+<% end %>
 <%= link_to 'Back', places_path %>
 
 </div>
