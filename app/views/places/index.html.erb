@@ -40,11 +40,12 @@
           <div class="col-md-3"></div>
           <div class="col-md-6"></div>
           <div class="col-md-3 cost">
-            <% if user_signed_in? == true %>
+            <!-- Cost Calc <% if user_signed_in? == true %>
             $<%= place.cost * current_user.adult%> 
             <% else %>
             $<%= place.cost %>
-            <% end %>
+            <% end %> -->
+            <%= place.cost %>
           </div>
           
           
