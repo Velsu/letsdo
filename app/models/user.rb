@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
          
   has_many :places
   serialize :child_cost, Hash
+  
  
 end

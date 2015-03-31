@@ -5,8 +5,6 @@ class Place < ActiveRecord::Base
     
     belongs_to :user
     
-    def calc
-       cost
-    end
+
     
 end

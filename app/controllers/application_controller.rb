@@ -5,9 +5,14 @@ class ApplicationController < ActionController::Base
   
   before_filter :configure_devise_parameters, if: :devise_controller?
 
+def times
+end
+
 protected
 def configure_devise_parameters
   devise_parameter_sanitizer.for(:account_update) << :adult
 end
+
+
 
 end

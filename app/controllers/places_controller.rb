@@ -8,6 +8,12 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
+    if user_signed_in? == true 
+      @adult_count = current_user.adult
+    end
+  end
+  
+  def times
   end
 
   # GET /places/1
