@@ -80,6 +80,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:title, :s_description, :l_description, :cost, :address, :phone, :outdoor, :website, :picture, :min_age, :verified, :l_time, :op_hours, :image)
+      params.require(:place).permit(:title, :s_description, :l_description, :cost, :address, :phone, :outdoor, :website, :picture, :min_age, :verified, :l_time, :op_hours, :image, :img)
     end
 end
