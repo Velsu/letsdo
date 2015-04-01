@@ -1,7 +1,7 @@
 <% if user_signed_in? && current_user.email == "acevedo.oliver@gmail.com" %>
     <div class="col-md-6 col-md-offset-3">
         <h1>Editing Place</h1>
-        <%= image_tag @place.image.url(:medium) %>
+        <%= image_tag @place.picture_url %>
         <%= render 'form' %>
         
         <%= link_to 'Show', @place %> |

@@ -35,7 +35,7 @@
     <div class="mix box panels panel-default" data-myorder="<%= place.title %>">      
       <% end %>
       <% if place.verified == true %>
-        <%= link_to (image_tag place.image.url(:medium)), place %>
+        <%= link_to (image_tag place.picture_url), place %>
         <div class="cards">
           <p><%= place.title %></p>
           <div class="col-md-3"></div>
