@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331001858) do
+ActiveRecord::Schema.define(version: 20150401000501) do
 
   create_table "places", force: :cascade do |t|
     t.string   "title"
     t.text     "s_description"
     t.text     "l_description"
-    t.float    "cost"
+    t.float    "cost",               default: 0.0
     t.string   "address"
     t.string   "phone"
     t.boolean  "outdoor"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20150331001858) do
     t.boolean  "verified"
     t.float    "l_time"
     t.string   "op_hours"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
