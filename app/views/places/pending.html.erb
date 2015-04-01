@@ -1,0 +1,14 @@
+<div id="Container">
+  <% @places.each do |place| %>
+    <% if place.verified == false %>
+      <div class="col-md-6">      
+        <%= link_to place.title, place %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Edit', edit_place_path(place) %>
+        <%= link_to 'Delete', place, method: :delete,
+                                       data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

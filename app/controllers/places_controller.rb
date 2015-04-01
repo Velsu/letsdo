@@ -13,7 +13,8 @@ class PlacesController < ApplicationController
     end
   end
   
-  def times
+  def pending
+    @places = Place.all
   end
 
   # GET /places/1

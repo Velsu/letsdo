@@ -38,8 +38,9 @@
   .form-group
     = f.input :min_age, input_html: { class: 'form-control'}
 
-  .form-group
-    = f.input :verified, input_html: { class: 'form-control'}
+  - if user_signed_in? && current_user.email == "acevedo.oliver@gmail.com"
+    .form-group
+      = f.input :verified, input_html: { class: 'form-control'}
 
   .form-group
     = f.input :l_time, input_html: { class: 'form-control'}
