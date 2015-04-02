@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401000501) do
+ActiveRecord::Schema.define(version: 20150402172800) do
 
   create_table "places", force: :cascade do |t|
     t.string   "title"
     t.text     "s_description"
     t.text     "l_description"
-    t.float    "cost",               default: 0.0
+    t.decimal  "cost",               precision: 5, scale: 2, default: 0.0
     t.string   "address"
     t.string   "phone"
     t.boolean  "outdoor"
@@ -27,12 +27,16 @@ ActiveRecord::Schema.define(version: 20150401000501) do
     t.boolean  "verified"
     t.float    "l_time"
     t.string   "op_hours"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
