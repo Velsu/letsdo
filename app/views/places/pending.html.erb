@@ -1,6 +1,6 @@
 <div id="Container">
   <% @places.each do |place| %>
-    <% if place.verified == false %>
+    <% if place.verified != true %>
       <div class="col-md-6">      
         <%= link_to place.title, place %>
       </div>
