@@ -42,7 +42,7 @@
           <div class="col-md-6"></div>
           <div class="col-md-3 cost">
             <% if user_signed_in? == true %>
-            <%= number_to_currency(place.cost) * current_user.adult%> 
+            <%= number_to_currency(place.cost * current_user.adult)%> 
             <% else %>
             <%= number_to_currency(place.cost) %>
             <% end %>
