@@ -1,11 +1,31 @@
 function initialize() {
   var mapOptions = {
     zoom: 8,
-    center: new google.maps.LatLng(26.1333, -80.1500)
+    //center: new google.maps.LatLng(26.1333, -80.1500)
   };
 
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+
+      
+var directionsService = new google.maps.DirectionsService();
+var directionsDisplay = new google.maps.DirectionsRenderer();
+ 
+map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+ 
+directionsDisplay.setMap(map);
+ 
+var request = {
+  origin: "Fort Lauderdale, FL",
+  destination: "Miami, FL",
+  travelMode: google.maps.DirectionsTravelMode.DRIVING
+};
+directionsService.route(request, function(response, status) {
+  //Check if request is successful.
+  if (status == google.maps.DirectionsStatus.OK) {
+    console.log(status);
+    directionsDisplay.setDirections(response); //Display the directions result
+  }
+});
+
 }
 
 function loadScript() {
