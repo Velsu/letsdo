@@ -36,6 +36,8 @@ class PlacesController < ApplicationController
     data = JSON.parse(response.body)
     distance = data['routes'][0]['legs'][0]['distance']['text']
     @distance = distance
+    t_time = data['routes'][0]['legs'][0]['duration']['text']
+    @t_time = t_time
   end
   
 
