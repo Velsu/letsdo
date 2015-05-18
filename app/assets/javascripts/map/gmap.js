@@ -17,8 +17,8 @@ function initialize() {
     directionsDisplay.setMap(map);
      
     var request = {
-      origin: "Fort Lauderdale, FL",
-      destination: "Miami, FL",
+      origin: "Davie, FL",
+      destination: address,
       travelMode: google.maps.DirectionsTravelMode.DRIVING
     };
     directionsService.route(request, function(response, status) {

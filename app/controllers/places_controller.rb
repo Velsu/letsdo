@@ -29,7 +29,7 @@ class PlacesController < ApplicationController
   def show
      #Get Directions
     
-    uri = URI.parse("https://maps.googleapis.com/maps/api/directions/json?units=imperial&origin=33317&destination=miami,fl&key=AIzaSyAhvCRuzyRnVMc4kCahnEJ8XynbnJTTMTw")
+    uri = URI.parse("https://maps.googleapis.com/maps/api/directions/json?units=imperial&origin=davie,fl&destination=#{@place.address.gsub(/\s+/, "")}&key=AIzaSyAhvCRuzyRnVMc4kCahnEJ8XynbnJTTMTw")
 
     response = Net::HTTP.get_response(uri)
   
