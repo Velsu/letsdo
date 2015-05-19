@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-     #Get Directions
+     #
     
     
   end
