@@ -1,45 +1,35 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  require "net/http"
-  require "uri"
-  require "json"
-  
-  
+
  
-  
   
   # GET /places
   # GET /places.json
+
+  
+  def pending
+    @places = Place.all
+  end
+
+  
+  # GET /places/1
+  # GET /places/1.json
+  def show
+     #Get Directions
+    
+    
+  end
+  
+
+  
   def index
     @places = Place.all
     if user_signed_in? == true 
       @adult_count = current_user.adult
     end
     
-   
     
-  end
-  
-  def pending
-    @places = Place.all
-  end
-
-  # GET /places/1
-  # GET /places/1.json
-  def show
-     #Get Directions
-    
-    uri = URI.parse("https://maps.googleapis.com/maps/api/directions/json?units=imperial&origin=davie,fl&destination=#{@place.address.gsub(/\s+/, "")}&key=AIzaSyAhvCRuzyRnVMc4kCahnEJ8XynbnJTTMTw")
-
-    response = Net::HTTP.get_response(uri)
-  
-    data = JSON.parse(response.body)
-    distance = data['routes'][0]['legs'][0]['distance']['text']
-    @distance = distance
-    t_time = data['routes'][0]['legs'][0]['duration']['text']
-    @t_time = t_time
-  end
-  
+  end  
 
   # GET /places/new
   def new
