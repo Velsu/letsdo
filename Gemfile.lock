@@ -76,11 +76,6 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.23)
       unf (>= 0.0.5, < 1.0.0)
-    draper (2.1.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.4.0)
     flowtype-rails (1.1.1)
@@ -157,7 +152,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    request_store (1.1.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rest-client (1.8.0)
@@ -219,7 +213,6 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
-  draper (~> 2.1.0)
   flowtype-rails
   font-awesome-sass
   haml (~> 4.0.6)

@@ -38,8 +38,8 @@
         <%= link_to (image_tag place.picture_url), place %>
         <div class="cards">
           <p><%= place.title %></p>
-          <div class="col-md-3"><%= place.calc_time %></div>
-          <div class="col-md-6"><%= place.calc_distance %></div>
+          <div class="col-md-5 calcs"><%= place.calc_time %></div>
+          <div class="col-md-4 calcs"><%= place.calc_distance %></div>
           <div class="col-md-3 cost">
             <% if user_signed_in? == true %>
             <%= number_to_currency(place.cost * current_user.adult) %> 
